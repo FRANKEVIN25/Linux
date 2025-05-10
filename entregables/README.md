@@ -25,15 +25,15 @@ Crear una estructura de directorios y realizar operaciones básicas con archivos
 
 **💡 Solución:**
 
-# 1. Verificar ubicación actual
+1. Verificar ubicación actual
 pwd
 
-# 2. Crear la estructura de directorios
+2. Crear la estructura de directorios
 mkdir -p ~/laboratorio/datos/entrada
 mkdir -p ~/laboratorio/datos/salida
 mkdir -p ~/laboratorio/scripts
 mkdir -p ~/laboratorio/respaldo
 
-# 3. Verificar la estructura creada
+3. Verificar la estructura creada
 ls -la ~/laboratorio
 
