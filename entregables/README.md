@@ -41,7 +41,7 @@ ls -la ~/laboratorio
 
 ![Captura del ejercicio 1.1](imagenes/cap1.png)
 
-📁 Ejercicio 1.2: Operaciones con Archivos
+📁 Ejercicio 1: Operaciones con Archivos
 
 🎯 Objetivo:
 Practicar navegación entre directorios y manipulación básica de archivos.
@@ -65,5 +65,63 @@ mv config.cfg ~/laboratorio/
 
 # 8. Eliminar "datos2.txt"
 rm datos2.txt
-``` 
+```
+
 ![Captura del ejercicio 1.2](imagenes/cap2.png)
+
+📁 Ejercicio 1.2: Visualización y Edición Básica
+
+🎯 Objetivo:
+Crear archivos con contenido, visualizar su información y realizar ediciones simples con herramientas básicas.
+
+💡 Solución:
+
+```bash
+# 1. Crear un archivo con contenido
+echo "Esta es la primera línea del archivo" > ~/laboratorio/datos/entrada/datos1.txt
+echo "Esta es la segunda línea del archivo" >> ~/laboratorio/datos/entrada/datos1.txt
+echo "Esta es la tercera línea del archivo" >> ~/laboratorio/datos/entrada/datos1.txt
+echo "Esta es la cuarta línea del archivo" >> ~/laboratorio/datos/entrada/datos1.txt
+echo "Esta es la quinta línea del archivo" >> ~/laboratorio/datos/entrada/datos1.txt
+
+# 2. Visualizar contenido completo
+cat ~/laboratorio/datos/entrada/datos1.txt
+
+# 3. Visualizar las primeras 3 líneas
+head -n 3 ~/laboratorio/datos/entrada/datos1.txt
+
+# 4. Visualizar las últimas 2 líneas
+tail -n 2 ~/laboratorio/datos/entrada/datos1.txt
+```
+![Captura del ejercicio 1.2](imagenes/cap3.png)
+
+🗃️ Ejercicio 2: Manipulación de Archivos con Bucle y Editor
+
+🎯 Objetivo:
+Crear múltiples líneas con un bucle, visualizar partes del archivo y editar contenido.
+
+💡 Solución:
+
+```bash
+# 1. Crear un archivo registro.log con 20 líneas
+cd ~/laboratorio/datos
+for i in {1..20}; do
+    echo "Esta es la línea $i del registro" >> registro.log
+done
+
+# 2. Visualizar las primeras 5 líneas
+head -n 5 registro.log
+
+# 3. Visualizar las últimas 3 líneas
+tail -n 3 registro.log
+
+# 4. Abrir el archivo con nano y agregar una línea al inicio
+nano registro.log
+# Agregar manualmente: "# ARCHIVO DE REGISTRO" al inicio
+
+# 5. Visualizar archivo completo
+cat registro.log
+```
+![Captura del ejercicio 1.2](imagenes/cap4.png)
+
+
