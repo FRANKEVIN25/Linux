@@ -23,7 +23,7 @@
 **🎯 Objetivo:**  
 Crear una estructura de directorios y realizar operaciones básicas con archivos.
 
-****💡 Solución:**
+**💡 Solución:**
 
 ```bash
 # 1. Verificar ubicación actual
@@ -37,12 +37,6 @@ mkdir -p ~/laboratorio/respaldo
 
 # 3. Verificar la estructura creada
 ls -la ~/laboratorio
-
-**🖼️ Evidencia:**
-
-![Captura del ejercicio 1.1](imagenes/cap1.png)
-
-Como se observa en la imagen, se ejecutaron correctamente los comandos `pwd`, `mkdir` y `ls` para gestionar los directorios del laboratorio.**
 
 
 
