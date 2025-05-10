@@ -124,7 +124,7 @@ cat registro.log
 ```
 ![Captura del ejercicio 1.2](imagenes/cap4.png)
 
-🔧 Parte II: Comandos de Nivel Intermedio
+##  🔧 Parte II: Comandos de Nivel Intermedio
 📄 Ejercicio 2.1: Búsqueda y Filtrado
 
 🎯 Objetivo:
