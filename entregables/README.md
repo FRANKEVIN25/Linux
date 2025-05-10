@@ -1,50 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Laboratorio 06: Comandos de Terminal en Linux</title>
-</head>
-<body>
+# 🧪 Laboratorio 06: Comandos de Terminal en Linux
 
-  <h1>Laboratorio 06: Comandos de Terminal en Linux</h1>
-  <p>Este repositorio contiene los resultados del Laboratorio 06 del curso de Sistemas Operativos, enfocado en el manejo de comandos de terminal en Linux.</p>
+**Curso:** Sistemas Operativos  
+**Tema:** Manejo de comandos de terminal en Linux  
+**Autor:** [Jauregui Bendezu, Frank Kevin]  
+**Fecha:** [07/05/2025]
 
-  <h2>Objetivos del laboratorio</h2>
-  <ul>
-    <li>Familiarización con el entorno de terminal de Linux</li>
-    <li>Desarrollo de habilidades prácticas en la ejecución de comandos de terminal</li>
-    <li>Progresión desde comandos básicos hasta tareas más avanzadas</li>
-    <li>Comprensión de conceptos fundamentales de la línea de comandos Linux</li>
-  </ul>
+---
 
-  <h2>Parte I: Comandos de nivel básico</h2>
+## 🎯 Objetivos del Laboratorio
 
-  <h3>Ejercicio 1.1: Navegación y Gestión de Archivos</h3>
-  <p><strong>Objetivo:</strong> Crear una estructura de directorios y realizar operaciones básicas con archivos.</p>
+- ✅ Familiarización con el entorno de terminal de Linux.  
+- ✅ Desarrollo de habilidades prácticas en la ejecución de comandos de terminal.  
+- ✅ Progresión desde comandos básicos hasta tareas más avanzadas.  
+- ✅ Comprensión de conceptos fundamentales de la línea de comandos de Linux.
 
-  <h4>Solución:</h4>
-  <pre><code>
-# Crear directorio principal
-mkdir laboratorio06
-cd laboratorio06
+---
 
-# Crear subdirectorios
-mkdir documentos imagenes scripts
+## 🧩 Parte I: Comandos de Nivel Básico
 
-# Crear archivos vacíos
-touch documentos/archivo1.txt
-touch documentos/archivo2.txt
-touch scripts/script1.sh
+### 📁 Ejercicio 1.1: Navegación y Gestión de Archivos
 
-# Copiar archivo
-cp documentos/archivo1.txt documentos/archivo1_copia.txt
+**🎯 Objetivo:**  
+Crear una estructura de directorios y realizar operaciones básicas con archivos.
 
-# Mover archivo
-mv documentos/archivo2.txt imagenes/
+**💡 Solución:**
 
-# Eliminar archivo
-rm documentos/archivo1_copia.txt
-  </code></pre>
+```bash
+# 1. Crear el directorio principal del laboratorio
+mkdir Laboratorio06
+cd Laboratorio06
 
-</body>
-</html>
+# 2. Crear subdirectorios para organización
+mkdir Documentos Scripts Resultados
+
+# 3. Crear archivos dentro de los directorios
+touch Documentos/nota.txt
+touch Scripts/script.sh
+touch Resultados/datos.txt
+
+# 4. Copiar un archivo
+cp Documentos/nota.txt Resultados/
+
+# 5. Mover un archivo
+mv Scripts/script.sh Documentos/
+
+# 6. Renombrar un archivo
+mv Resultados/datos.txt Resultados/resultado_final.txt
+
+# 7. Eliminar un archivo
+rm Documentos/nota.txt
+
+# 8. Ver estructura resultante
+tree
+
