@@ -25,31 +25,15 @@ Crear una estructura de directorios y realizar operaciones básicas con archivos
 
 **💡 Solución:**
 
-```bash
-# 1. Crear el directorio principal del laboratorio
-mkdir Laboratorio06
-cd Laboratorio06
+# 1. Verificar ubicación actual
+pwd
 
-# 2. Crear subdirectorios para organización
-mkdir Documentos Scripts Resultados
+# 2. Crear la estructura de directorios
+mkdir -p ~/laboratorio/datos/entrada
+mkdir -p ~/laboratorio/datos/salida
+mkdir -p ~/laboratorio/scripts
+mkdir -p ~/laboratorio/respaldo
 
-# 3. Crear archivos dentro de los directorios
-touch Documentos/nota.txt
-touch Scripts/script.sh
-touch Resultados/datos.txt
-
-# 4. Copiar un archivo
-cp Documentos/nota.txt Resultados/
-
-# 5. Mover un archivo
-mv Scripts/script.sh Documentos/
-
-# 6. Renombrar un archivo
-mv Resultados/datos.txt Resultados/resultado_final.txt
-
-# 7. Eliminar un archivo
-rm Documentos/nota.txt
-
-# 8. Ver estructura resultante
-tree
+# 3. Verificar la estructura creada
+ls -la ~/laboratorio
 
