@@ -38,7 +38,4 @@ mkdir -p ~/laboratorio/respaldo
 # 3. Verificar la estructura creada
 ls -la ~/laboratorio
 
-<p align="center">
-  <img src="imagenes/cap1.png>
- <p align="center">
-</p>
+![Captura del ejercicio 1.1](imagenes/cap1.png)
