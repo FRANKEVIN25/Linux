@@ -123,5 +123,7 @@ nano registro.log
 cat registro.log
 ```
 ![Captura del ejercicio 1.2](imagenes/cap4.png)
+![Captura del ejercicio 1.2](imagenes/cap41.png)
+
 
 
