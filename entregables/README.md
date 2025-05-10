@@ -1,4 +1,4 @@
-# 🧪 Laboratorio 06: Comandos de Terminal en Linux
+# Laboratorio 06: Comandos de Terminal en Linux
 
 **Curso:** Sistemas Operativos  
 **Tema:** Manejo de comandos de terminal en Linux  
