@@ -48,6 +48,7 @@ Practicar navegación entre directorios y manipulación básica de archivos.
 
 💡 Solución:
 
+```bash
 # 4. Navegar entre los diferentes directorios
 cd ~/laboratorio
 cd datos
@@ -64,4 +65,5 @@ mv config.cfg ~/laboratorio/
 
 # 8. Eliminar "datos2.txt"
 rm datos2.txt
+``` 
 
