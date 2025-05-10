@@ -69,7 +69,7 @@ rm datos2.txt
 
 ![Captura del ejercicio 1.2](imagenes/cap2.png)
 
-📁 Ejercicio 1.2: Visualización y Edición Básica
+### 📁 Ejercicio 1.2: Visualización y Edición Básica
 
 🎯 Objetivo:
 Crear archivos con contenido, visualizar su información y realizar ediciones simples con herramientas básicas.
@@ -147,7 +147,7 @@ grep -v "bash" usuarios.txt  # líneas que NO contienen "bash"
 ```
 ![Captura del ejercicio 1.2](imagenes/cap5.png)
 
-📊 Ejercicio 3: Búsqueda, Filtros y Procesamiento de Texto
+## 📊 Ejercicio 3: Búsqueda, Filtros y Procesamiento de Texto
 
 🎯 Objetivo:
 Buscar archivos específicos, procesar contenido numérico y aplicar comandos de filtrado.
@@ -192,7 +192,7 @@ cat /etc/passwd | grep "bash" | wc -l
 ```
 ![Captura del ejercicio 3](imagenes/cap7.png)
 
-🧩 Ejercicio 4: Redirección y Tuberías
+## 🧩 Ejercicio 4: Redirección y Tuberías
 
 🎯 Objetivo:
 Utilizar redirección de salida y comandos en tubería para gestionar procesos y archivos del sistema.
@@ -213,6 +213,58 @@ ps aux --sort=-%mem | head -n 6 > ~/laboratorio/top_procesos.txt
 ls -la /etc | wc -l
 ```
 ![Captura del ejercicio 3](imagenes/cap8.png)
+
+🔐 Ejercicio 2.3: Permisos y Usuarios
+
+🎯 Objetivo:
+Comprender el sistema de permisos de Linux, modificar permisos de archivos y ejecutar scripts.
+
+💡 Comandos utilizados:
+```bash
+# 1. Crear un script simple
+echo '#!/bin/bash' > ~/laboratorio/scripts/saludo.sh
+echo 'echo "Hola, $USER. La fecha actual es $(date)"' >> ~/laboratorio/scripts/saludo.sh
+
+# 2. Ver permisos actuales
+ls -la ~/laboratorio/scripts/saludo.sh
+
+# 3. Modificar permisos para hacer ejecutable
+chmod +x ~/laboratorio/scripts/saludo.sh
+
+# 4. Ejecutar el script
+~/laboratorio/scripts/saludo.sh
+```
+![Captura del ejercicio 3](imagenes/cap9.png)
+
+📂 Ejercicio 5: Permisos y Usuarios
+
+🎯 Objetivo:
+Comprender y modificar permisos de archivos y directorios para definir accesos adecuados.
+
+💡 Comandos utilizados:
+
+```bash
+# 1. Crear directorio "privado"
+mkdir ~/laboratorio/privado
+
+# 2. Crear archivo "confidencial.txt"
+touch ~/laboratorio/privado/confidencial.txt
+echo "Información confidencial" > ~/laboratorio/privado/confidencial.txt
+
+# 3. Configurar permisos para el archivo (solo lectura y escritura para el propietario)
+chmod 600 ~/laboratorio/privado/confidencial.txt
+
+# 4. Crear directorio "compartido" con permisos específicos
+mkdir ~/laboratorio/compartido
+chmod 755 ~/laboratorio/compartido
+
+# 5. Verificar permisos
+ls -la ~/laboratorio/privado
+ls -la ~/laboratorio/compartido
+```
+
+![Captura del ejercicio 3](imagenes/cap10.png)
+
 
 
 
