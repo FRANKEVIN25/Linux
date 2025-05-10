@@ -39,10 +39,13 @@ mkdir -p ~/laboratorio/respaldo
 ls -la ~/laboratorio
 
 
+📌 Notas:
 
+    pwd muestra el directorio actual de trabajo.
 
+    mkdir -p permite crear directorios anidados en una sola línea.
 
-![Captura del ejercicio 1.1](/entregables/imagenes/cap1.png)
+    ls -la muestra los archivos y carpetas, incluyendo ocultos, con detalles.
 
 
 
