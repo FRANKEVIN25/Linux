@@ -39,6 +39,6 @@ mkdir -p ~/laboratorio/respaldo
 ls -la ~/laboratorio
 
 <p align="center">
-  <img src="../imagenes/cap1.png>
+  <img src="imagenes/cap1.png>
  <p align="center">
 </p>
