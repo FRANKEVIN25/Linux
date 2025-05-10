@@ -38,6 +38,30 @@ mkdir -p ~/laboratorio/respaldo
 # 3. Verificar la estructura creada
 ls -la ~/laboratorio
 ```
+
 ![Captura del ejercicio 1.1](imagenes/cap1.png)
 
+📁 Ejercicio 1.2: Operaciones con Archivos
+
+🎯 Objetivo:
+Practicar navegación entre directorios y manipulación básica de archivos.
+
+💡 Solución:
+
+# 4. Navegar entre los diferentes directorios
+cd ~/laboratorio
+cd datos
+cd entrada
+
+# 5. Crear tres archivos de texto vacíos
+touch datos1.txt datos2.txt config.cfg
+
+# 6. Copiar "datos1.txt" al directorio "respaldo"
+cp datos1.txt ~/laboratorio/respaldo/
+
+# 7. Mover "config.cfg" al directorio raíz del laboratorio
+mv config.cfg ~/laboratorio/
+
+# 8. Eliminar "datos2.txt"
+rm datos2.txt
 
