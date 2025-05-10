@@ -320,5 +320,85 @@ cat ~/laboratorio/ping_log.txt
 ```
 ![Captura del ejercicio 3](imagenes/cap12.png)
 
+🧠 Ejercicio 3.2: Scripts Básicos y Automatización
+
+🎯 Objetivo:
+Crear scripts Bash simples que muestren información del sistema.
+
+💡 Comandos utilizados:
+```bash
+# 1. Crear un script llamado info_sistema.sh
+cat > ~/laboratorio/scripts/info_sistema.sh << 'EOL'
+#!/bin/bash
+echo "=== Información del Sistema ==="
+echo "Usuario: $USER"
+echo "Hostname: $(hostname)"
+echo "Fecha: $(date)"
+echo "Kernel: $(uname -r)"
+echo "Uptime: $(uptime -p)"
+echo "=== Espacio en disco ==="
+df -h | grep "/dev/"
+EOL
+
+# 2. Hacer ejecutable el script
+chmod +x ~/laboratorio/scripts/info_sistema.sh
+
+# 3. Ejecutar el script
+~/laboratorio/scripts/info_sistema.sh
+```
+![Captura del ejercicio 3](imagenes/cap13.png)
+
+🛠️ Ejercicio 7: Scripts Bash para Automatización
+
+🎯 Objetivo:
+Automatizar la creación de respaldos con un script personalizado.
+
+💡 Comandos utilizados:
+```bash
+# Crear script backup.sh
+cat > ~/laboratorio/scripts/backup.sh << 'EOL'
+#!/bin/bash
+# Script para crear una copia de seguridad de un directorio
+
+# Verificar si se proporcionó un directorio
+if [ $# -eq 0 ]; then
+    echo "Error: Debe proporcionar un directorio para hacer respaldo"
+    echo "Uso: $0 <directorio>"
+    exit 1
+fi
+
+# Verificar si el directorio existe
+if [ ! -d "$1" ]; then
+    echo "Error: El directorio $1 no existe"
+    exit 1
+fi
+
+# Crear nombre de archivo con fecha
+FECHA=$(date +%Y%m%d_%H%M%S)
+NOMBRE_ARCHIVO="backup_${FECHA}.tar.gz"
+RUTA_DESTINO=~/laboratorio/respaldo/$NOMBRE_ARCHIVO
+
+# Crear el archivo comprimido
+tar -czf $RUTA_DESTINO -C $(dirname "$1") $(basename "$1")
+
+# Verificar si la operación fue exitosa
+if [ $? -eq 0 ]; then
+    TAMAÑO=$(du -h $RUTA_DESTINO | cut -f1)
+    echo "Respaldo creado exitosamente en $RUTA_DESTINO"
+    echo "Tamaño del archivo: $TAMAÑO"
+else
+    echo "Error al crear el respaldo"
+fi
+EOL
+
+# Hacer ejecutable el script
+chmod +x ~/laboratorio/scripts/backup.sh
+
+# Ejecutar el script para hacer un respaldo de ~/laboratorio/datos
+~/laboratorio/scripts/backup.sh ~/laboratorio/datos
+```
+![Captura del ejercicio 3](imagenes/cap14.png)
+
+
 
 
