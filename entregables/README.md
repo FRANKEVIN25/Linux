@@ -66,4 +66,4 @@ mv config.cfg ~/laboratorio/
 # 8. Eliminar "datos2.txt"
 rm datos2.txt
 ``` 
-
+![Captura del ejercicio 1.2](imagenes/cap2.png)
