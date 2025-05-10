@@ -265,7 +265,60 @@ ls -la ~/laboratorio/compartido
 
 ![Captura del ejercicio 3](imagenes/cap10.png)
 
+### Parte III: Comandos de nivel avanzado
+🧠 Ejercicio 3.1: Procesos y Monitoreo
 
+🎯 Objetivo:
+Monitorear y controlar procesos del sistema desde la terminal.
+
+💡 Comandos utilizados:
+
+```bash
+# 1. Ver procesos actuales (los primeros 10)
+ps aux | head -10
+
+# 2. Monitorear sistema una sola vez
+top -n 1
+
+# 3. Ejecutar proceso en segundo plano
+sleep 300 &
+
+# 4. Listar trabajos en segundo plano
+jobs
+
+# 5. Terminar proceso (por ID de trabajo)
+kill %1
+# O por PID:
+# kill <PID>
+```
+![Captura del ejercicio 3](imagenes/cap11.png)
+
+🛠️ Ejercicio 6: Scripts Básicos y Automatización
+
+🎯 Objetivo:
+Crear scripts o comandos que automaticen tareas simples.
+
+💡 Comandos utilizados:
+```bash
+# 1. Ejecutar ping en segundo plano y guardar salida
+ping google.com > ~/laboratorio/ping_log.txt &
+
+# 2. Ejecutar top y aprender:
+top
+# Presionar "P" → ordenar por uso de CPU
+# Presionar "M" → ordenar por uso de memoria
+# Presionar "u" → escribir tu usuario para filtrar procesos
+
+# 3. Identificar el proceso ping
+ps aux | grep ping
+
+# 4. Terminar proceso ping (reemplaza [PID] por el real)
+kill [PID]
+
+# 5. Verificar contenido del archivo de log
+cat ~/laboratorio/ping_log.txt
+```
+![Captura del ejercicio 3](imagenes/cap12.png)
 
 
 
