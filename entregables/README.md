@@ -478,6 +478,6 @@ chmod +x ~/laboratorio/scripts/analisis_logs.sh
 # Ejecutar el script (con permisos de superusuario si es necesario)
 sudo ~/laboratorio/scripts/analisis_logs.sh
 ```
-![Captura del ejercicio 3](imagenes/cap14.png)
+![Captura del ejercicio 3](imagenes/cap15.png)
 
 
