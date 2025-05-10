@@ -176,6 +176,44 @@ sort -nr ~/laboratorio/numeros.txt > ~/laboratorio/numeros_ordenados.txt
 ```
 ![Captura del ejercicio 3](imagenes/cap6.png)
 
+🔁 Ejercicio 2.2: Redirección y Tuberías
+
+🎯 Objetivo:
+Aprender a redirigir la salida de comandos, usar tuberías (|) y generar flujos de procesamiento.
+
+💡 Soluciòn:
+```bash
+# 1. Redirección básica
+ls -la > ~/laboratorio/listado.txt
+echo "Nueva línea de texto" >> ~/laboratorio/listado.txt
+
+# 2. Tuberías simples
+cat /etc/passwd | grep "bash" | wc -l
+```
+![Captura del ejercicio 3](imagenes/cap7.png)
+
+🧩 Ejercicio 4: Redirección y Tuberías
+
+🎯 Objetivo:
+Utilizar redirección de salida y comandos en tubería para gestionar procesos y archivos del sistema.
+
+💡 Comandos utilizados:
+```bash
+
+# 1. Crear archivo con lista de procesos en ejecución
+ps aux > ~/laboratorio/procesos.txt
+
+# 2. Filtrar procesos del usuario actual
+ps aux | grep $USER > ~/laboratorio/mis_procesos.txt
+
+# 3. Encontrar los 5 procesos que más memoria consumen
+ps aux --sort=-%mem | head -n 6 > ~/laboratorio/top_procesos.txt
+
+# 4. Contar archivos en /etc con un único comando
+ls -la /etc | wc -l
+```
+![Captura del ejercicio 3](imagenes/cap8.png)
+
 
 
 
