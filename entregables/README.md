@@ -38,14 +38,11 @@ mkdir -p ~/laboratorio/respaldo
 # 3. Verificar la estructura creada
 ls -la ~/laboratorio
 
+**🖼️ Evidencia:**
 
-📌 Notas:
+![Captura del ejercicio 1.1](imagenes/cap1.png)
 
-    pwd muestra el directorio actual de trabajo.
-
-    mkdir -p permite crear directorios anidados en una sola línea.
-
-    ls -la muestra los archivos y carpetas, incluyendo ocultos, con detalles.
+Como se observa en la imagen, se ejecutaron correctamente los comandos `pwd`, `mkdir` y `ls` para gestionar los directorios del laboratorio.
 
 
 
