@@ -37,3 +37,5 @@ mkdir -p ~/laboratorio/respaldo
 
 # 3. Verificar la estructura creada
 ls -la ~/laboratorio
+
+
