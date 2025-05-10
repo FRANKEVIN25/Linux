@@ -399,6 +399,85 @@ chmod +x ~/laboratorio/scripts/backup.sh
 ```
 ![Captura del ejercicio 3](imagenes/cap14.png)
 
+🚩 Ejercicio 3.3: Reto Final Integrador
 
+🎯 Objetivo:
+Crear un script Bash para analizar los archivos de logs del sistema y generar un informe en Markdown.
+
+💡 Comandos utilizados:
+
+```bash
+# Crear script analisis_logs.sh
+cat > ~/laboratorio/scripts/analisis_logs.sh << 'EOL'
+#!/bin/bash
+# Script para analizar archivos de log
+
+# Definir constantes
+DIRECTORIO_LOGS="/var/log"
+ARCHIVO_SALIDA=~/laboratorio/datos/salida/informe_logs.md
+
+# Crear directorio de salida si no existe
+mkdir -p $(dirname $ARCHIVO_SALIDA)
+
+# Crear cabecera del informe
+echo "# Informe de Análisis de Logs" > $ARCHIVO_SALIDA
+echo "" >> $ARCHIVO_SALIDA
+echo "**Fecha y hora:** $(date)" >> $ARCHIVO_SALIDA
+echo "" >> $ARCHIVO_SALIDA
+echo "## Archivos analizados" >> $ARCHIVO_SALIDA
+echo "" >> $ARCHIVO_SALIDA
+echo "| Archivo | Tamaño | Errores encontrados |" >> $ARCHIVO_SALIDA
+echo "|---------|--------|---------------------|" >> $ARCHIVO_SALIDA
+
+# Encontrar los 5 archivos de log más grandes
+ARCHIVOS_GRANDES=$(find $DIRECTORIO_LOGS -name "*.log" -type f -exec du -h {} \; | sort -hr | head -5)
+
+# Archivo con más errores
+MAX_ERRORES=0
+ARCHIVO_MAX=""
+
+# Procesar archivos
+echo "$ARCHIVOS_GRANDES" | while read TAMAÑO ARCHIVO; do
+    if [ -r "$ARCHIVO" ]; then
+        NUM_ERRORES=$(grep -i "error" "$ARCHIVO" 2>/dev/null | wc -l)
+        if [ $NUM_ERRORES -gt $MAX_ERRORES ]; then
+            MAX_ERRORES=$NUM_ERRORES
+            ARCHIVO_MAX=$ARCHIVO
+        fi
+        echo "| $(basename $ARCHIVO) | $TAMAÑO | $NUM_ERRORES |" >> $ARCHIVO_SALIDA
+    else
+        echo "| $(basename $ARCHIVO) | $TAMAÑO | Sin acceso |" >> $ARCHIVO_SALIDA
+    fi
+done
+
+echo "" >> $ARCHIVO_SALIDA
+echo "## Últimos errores encontrados" >> $ARCHIVO_SALIDA
+echo "" >> $ARCHIVO_SALIDA
+
+# Mostrar últimos errores
+if [ -n "$ARCHIVO_MAX" ] && [ -r "$ARCHIVO_MAX" ]; then
+    echo "### En $(basename $ARCHIVO_MAX):" >> $ARCHIVO_SALIDA
+    echo "" >> $ARCHIVO_SALIDA
+    echo '```' >> $ARCHIVO_SALIDA
+    grep -i "error" "$ARCHIVO_MAX" 2>/dev/null | tail -3 >> $ARCHIVO_SALIDA
+    echo '```' >> $ARCHIVO_SALIDA
+else
+    echo "No se pudo acceder al archivo con más errores." >> $ARCHIVO_SALIDA
+fi
+
+# Mostrar resumen
+echo "==== RESUMEN DE ANÁLISIS DE LOGS ===="
+echo "Se han analizado los 5 archivos de log más grandes en $DIRECTORIO_LOGS"
+echo "El informe completo está disponible en: $ARCHIVO_SALIDA"
+echo "========================================="
+EOL
+
+# Hacer ejecutable el script
+chmod +x ~/laboratorio/scripts/analisis_logs.sh
+
+# Ejecutar el script (con permisos de superusuario si es necesario)
+sudo ~/laboratorio/scripts/analisis_logs.sh
+```
+![Captura del ejercicio 3](imagenes/cap14.png)
 
 
